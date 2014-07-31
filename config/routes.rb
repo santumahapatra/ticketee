@@ -4,7 +4,9 @@ Ticketee::Application.routes.draw do
 
   root "projects#index"
 
-  resources :projects
+  resources :projects do
+    resources :tickets
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
