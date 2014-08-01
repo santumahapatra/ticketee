@@ -10,6 +10,9 @@ Ticketee::Application.routes.draw do
 
   resources :users
 
+  get "/signin", to: "sessions#new"
+  post "/signin", to: "sessions#create"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
