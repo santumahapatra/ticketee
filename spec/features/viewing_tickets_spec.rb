@@ -4,10 +4,12 @@ feature "Viewing tickets" do
   before do
     sublime_text_3 = FactoryGirl.create(:project, name: "Sublime Text 3")
 
-    FactoryGirl.create(:ticket,
+    user = FactoryGirl.create(:user)
+    ticket = FactoryGirl.create(:ticket,
             project: sublime_text_3,
             title: "Make it shiny!",
             description: "Gradients! Starbursts! Oh my!")
+    ticket.update(user: user)
 
     internet_explorer = FactoryGirl.create(:project, name: "Internet Explorer")
 
